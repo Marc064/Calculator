@@ -7,11 +7,11 @@
 
 #include <cstdlib>
 
-template <class T> class LinkedList;
+template <class T> class Stack;
 template <class T>
 class Node {
 
-    friend class LinkedList<T>;
+    friend class Stack<T>;
 
 public:
     Node();
