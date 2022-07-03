@@ -6,7 +6,7 @@
 #define CALCULATOR_SYNTAX_H
 
 #include "Pile.cpp"
-#include <ctype.h>
+#include <cctype>
 
 class Syntax {
 public:
