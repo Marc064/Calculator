@@ -10,10 +10,12 @@ class Operation {
 public:
     Operation();
     long double addition (double, double);
-    long double sustraction (double, double);
+    long double subtraction (double, double);
     long double multiplication (double, double);
     long double division (double, double);
-    long double potency (double, double);
+    long double power (double, double);
+
+    virtual ~Operation();
 };
 
 

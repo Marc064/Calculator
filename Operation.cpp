@@ -12,7 +12,7 @@ long double Operation::addition(double a, double b) {
     return result;
 }
 
-long double Operation::sustraction(double a, double b) {
+long double Operation::subtraction(double a, double b) {
     long double result = a-b;
     return result;
 }
@@ -27,7 +27,11 @@ long double Operation::division(double a, double b) {
     return result;
 }
 
-long double Operation::potency(double a, double b) {
+long double Operation::power(double a, double b) {
     long double result = std::pow(a,b);
     return result;
+}
+
+Operation::~Operation() {
+
 }

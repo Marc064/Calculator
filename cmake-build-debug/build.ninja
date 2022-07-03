@@ -67,6 +67,12 @@ build CMakeFiles/Calculator.dir/Operation.cpp.obj: CXX_COMPILER__Calculator_Debu
   OBJECT_DIR = CMakeFiles\Calculator.dir
   OBJECT_FILE_DIR = CMakeFiles\Calculator.dir
 
+build CMakeFiles/Calculator.dir/Syntax.cpp.obj: CXX_COMPILER__Calculator_Debug D$:/Programacion/Programacion$ III$ s2/Calculator/Syntax.cpp || cmake_object_order_depends_target_Calculator
+  DEP_FILE = CMakeFiles\Calculator.dir\Syntax.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\Calculator.dir
+  OBJECT_FILE_DIR = CMakeFiles\Calculator.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Calculator
@@ -75,7 +81,7 @@ build CMakeFiles/Calculator.dir/Operation.cpp.obj: CXX_COMPILER__Calculator_Debu
 #############################################
 # Link the executable Calculator.exe
 
-build Calculator.exe: CXX_EXECUTABLE_LINKER__Calculator_Debug CMakeFiles/Calculator.dir/main.cpp.obj CMakeFiles/Calculator.dir/Pile.cpp.obj CMakeFiles/Calculator.dir/Operation.cpp.obj
+build Calculator.exe: CXX_EXECUTABLE_LINKER__Calculator_Debug CMakeFiles/Calculator.dir/main.cpp.obj CMakeFiles/Calculator.dir/Pile.cpp.obj CMakeFiles/Calculator.dir/Operation.cpp.obj CMakeFiles/Calculator.dir/Syntax.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Calculator.dir
