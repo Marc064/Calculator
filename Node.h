@@ -7,38 +7,32 @@
 
 #include <cstdlib>
 
-template <class T> class Stack;
+template <class T> class Pile;
+
 template <class T>
 class Node {
-
-    friend class Stack<T>;
-
+    friend class Pile<T>;
 public:
     Node();
     Node(T info);
 
     virtual ~Node();
+
 private:
-
     T info;
-    Node <T>* next;
-
+    Node<T>*next;
 };
 
-template<class T>
-Node<T>::Node() {
-
+template <class T>
+Node<T>::Node(){
     next = NULL;
-
 }
 
-template<class T>
-Node<T>::Node(T info) {
 
+template <class T>
+Node<T>::Node(T info){
     Node::info = info;
-
     next = NULL;
-
 }
 
 template<class T>
