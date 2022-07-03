@@ -10,25 +10,30 @@
 #include <vector>
 
 template <class T>
-class Stack {
-
+class Pile {
 public:
-    Stack();
+    Pile();
 
     bool isEmpty();
-    void stack(T info);
-    void unstack();
 
-    std::vector<T> getStack();
+    void Stack(T info);
 
-    virtual ~Stack();
+    T depile();
+
+    int getSize();
+
+    T getTop();
+
+    T* findInfo(char x);
+
+    Node<T> * findNode(char x);
+
+    std::vector<T> getPile();
+
+    virtual ~Pile();
 
 private:
-
-    Node<T>* head;
-
+    Node<T>* top;
 };
-
-
 
 #endif //CALCULATOR_STACK_H
