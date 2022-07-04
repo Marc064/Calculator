@@ -5,8 +5,8 @@
 #ifndef CALCULATOR_SYNTAX_H
 #define CALCULATOR_SYNTAX_H
 
-#include "Pile.cpp"
 #include <cctype>
+#include "Calculator.h"
 
 class Syntax {
 public:
@@ -17,6 +17,8 @@ public:
 
     virtual ~Syntax();
 };
+
+
 
 
 #endif //CALCULATOR_SYNTAX_H
