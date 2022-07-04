@@ -10,6 +10,19 @@ Syntax::Syntax() {
 
 bool Syntax::isCorrect(std::string operation) {
     if (!haveLetters(operation)){
+        Pile<char> *aux = new Pile<char>();
+        for (int i = 0; i < operation.length(); ++i) {
+            if (operation[i] == '('){
+                aux->Stack(operation[i]);
+            }else if(operation[i] == ')'){
+                if(!aux->isEmpty()){
+                    aux->depile();
+                }else{
+                    return false;
+                }
+                return true;
+            }
+        }
         return true;
     }else{
         return false;
@@ -33,5 +46,6 @@ bool Syntax::haveLetters(std::string operation) {
 Syntax::~Syntax() {
 
 }
+
 
 
