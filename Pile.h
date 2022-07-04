@@ -24,9 +24,9 @@ public:
 
     T getTop();
 
-    T* findInfo(char x);
+    T* findInfo(std::string x);
 
-    Node<T> * findNode(char x);
+    Node<T> * findNode(std::string x);
 
     std::vector<T> getPile();
 
