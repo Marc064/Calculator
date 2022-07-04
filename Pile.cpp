@@ -3,7 +3,6 @@
 //
 
 #include "Pile.h"
-#include "string.h"
 
 template<class T>
 Pile<T>::Pile() {
@@ -57,10 +56,10 @@ T Pile<T>::getTop() {
 }
 
 template<class T>
-T *Pile<T>::findInfo(char x) {
+T *Pile<T>::findInfo(std::string x) {
     Node<T>* aux = top;
     while(aux != NULL){
-        if((&aux->info,&x)){
+        if(aux->info.compare(x)==0){
             return &aux->info;
         }
         aux = aux->next;
@@ -69,10 +68,10 @@ T *Pile<T>::findInfo(char x) {
 }
 
 template<class T>
-Node<T> *Pile<T>::findNode(char x) {
+Node<T> *Pile<T>::findNode(std::string x) {
     Node<T> *aux= top;
     while(aux != NULL){
-        if(strcmp(&aux->info,&x)){
+        if(aux->info.compare(x)==0){
             return aux;
         }
         aux = aux->next;
