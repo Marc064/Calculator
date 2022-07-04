@@ -1,5 +1,7 @@
 #include <string>
 #include "Pile.cpp"
+#include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -12,13 +14,9 @@ public:
 
     vector<string> breakDown(string operation, bool type);
 
-    //Pile<string>* operationPreFix(string operation);
-
-    double calculate (string operation, bool type);
+    double calculate (string operation);
 
     Pile<string>* operationPosFix(string operation);
-
-    //vector<string>record();
 
     virtual ~Calculator();
 
