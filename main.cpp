@@ -1,5 +1,7 @@
 #include <iostream>
+#include "Calculator.h"
 #include "Syntax.h"
+
 
 using namespace std;
 int main() {
@@ -12,7 +14,7 @@ int main() {
         if(op != "exit"){
             Syntax *sin = new Syntax();
             if (sin->isCorrect(op)){
-                cout<<"El resultado de la operacion  "<<op<<"  es igual a:\n"<<fixed<<calculator.calculate("67*6+(12-23)/5**(4*7/3)", false)<<endl;
+                cout<<"El resultado de la operacion  "<<op<<"  es igual a:\n"<<fixed<<calculator.calculate(op, false)<<endl;
             }else{
                 cout<<"SYNTAX ERROR"<<endl;
             }
