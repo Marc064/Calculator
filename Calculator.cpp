@@ -1,5 +1,4 @@
 #include "Calculator.h"
-#include <iostream>
 #include <math.h>
 
 
@@ -142,23 +141,17 @@ double Calculator::calculate(string operation, bool type) {
             PosFix->Stack(s);
             if (!isNumber(PosFix->getTop())) {
                 string opertion = PosFix->depile();
-                std::cout << opertion << std::endl;
                 double a = stod(PosFix->depile());
-                std::cout << a << std::endl;
                 double b = stod(PosFix->depile());
-                std::cout << b << std::endl;
                 if (opertion.compare("+") == 0 || opertion.compare("-") == 0) {
                     result = opertion.compare("+") == 0 ? b + a : b - a;
-                    std::cout << "1: " << result << std::endl;
                     PosFix->Stack(to_string(result));
                 } else if (opertion.compare("/") == 0 || opertion.compare("*") == 0) {
                     result = opertion.compare("/") == 0 ? b / a : b * a;
-                    std::cout << "2: " << result << std::endl;
                     PosFix->Stack(to_string(result));
 
                 } else {
                     result = pow(b, a);
-                    std::cout << "3: " << result << std::endl;
                     PosFix->Stack(to_string(result));
                 }
             }
