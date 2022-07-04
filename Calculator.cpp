@@ -1,13 +1,11 @@
 #include "Calculator.h"
-#include <iostream>
 #include <math.h>
 
 
 
 Calculator::Calculator() {}
 
-bool Calculator::isNumber(const string& str)
-{
+bool Calculator::isNumber(const string& str){
     for (char const &c : str) {
         if (std::isdigit(c) == 0) return false;
     }
@@ -143,30 +141,24 @@ double Calculator::calculate(string operation, bool type) {
             PosFix->Stack(s);
             if(!isNumber(PosFix->getTop())){
                 string opertion = PosFix->depile();
-                cout<<opertion<<endl;
                 double a = stod(PosFix->depile());
-                cout<<a<<endl;
                 double b = stod(PosFix->depile());
-                cout<<b<<endl;
                 if(opertion.compare("+")==0 || opertion.compare("-")==0){
                     result = opertion.compare("+")==0?b+a:b-a;
-                    cout<<"1: "<<result<<endl;
                     PosFix->Stack(to_string(result));
                 }else if(opertion.compare("/")==0 || opertion.compare("*")==0){
                     result = opertion.compare("/")==0?a/b:b*a;
-                    cout<<"2: "<<result<<endl;
                     PosFix->Stack(to_string(result));
 
                 }else{
                     result = pow(a, b);
-                    cout<<"3: "<<result<<endl;
                     PosFix->Stack(to_string(result));
                 }
             }
         }
         result = stod(PosFix->getTop());
+        return result;
     }
-    return result;
 }
 
 Calculator::~Calculator() {
