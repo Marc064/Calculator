@@ -21,6 +21,9 @@ vector<string> Calculator::breakDown(string operation, bool type) {
                 aux = "";
             }
             aux += c;
+            if(operation.back()==c){
+                breakOperation.push_back(aux);
+            }
         }else{
             if(isNumber(aux)){
                 breakOperation.push_back(aux);
