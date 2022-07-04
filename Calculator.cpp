@@ -60,13 +60,15 @@ Pile<string>* Calculator::operationPosFix(string operation) {
     for(string s : breakOperation){
         if(isNumber(s)){
             out->Stack(s);
+        }else{
             if(!symbols->isEmpty()){
-                if(symbols->getTop().compare("*")==0||symbols->getTop().compare("/")==0){
-                    out->Stack(symbols->getTop());
-                    symbols->depile();
+                if((s.compare("+")==0 || s.compare("-")==0)){
+                    if(symbols->getTop().compare("*")==0 || symbols->getTop().compare("/")==0 || symbols->getTop().compare("**")==0){
+                        out->Stack(symbols->getTop());
+                        symbols->depile();
+                    }
                 }
             }
-        }else{
             symbols->Stack(s);
             if(symbols->getTop().compare(")")==0){
                 while(symbols->getTop().compare("(")!=0){
