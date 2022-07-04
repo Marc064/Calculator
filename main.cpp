@@ -1,6 +1,5 @@
 #include <iostream>
 #include "Syntax.h"
-#include "Calculator.h"
 
 using namespace std;
 int main() {
