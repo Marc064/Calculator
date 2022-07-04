@@ -1,4 +1,5 @@
 #include "Calculator.h"
+#include <iostream>
 #include <math.h>
 
 
@@ -119,7 +120,7 @@ Pile<string>* Calculator::operationPosFix(string operation) {
 
 double Calculator::calculate(string operation, bool type) {
     double result;
-    if(type == true){
+    if (type == true) {
         /*string aux;
         vector<string> calculatePreFix;
         Pile<string>* PreFix = operationPreFix(operation);
@@ -130,28 +131,34 @@ double Calculator::calculate(string operation, bool type) {
         for(string s: calculatePreFix){
             PreFix->Stack(s);
         }*/
-    }else{
-        Pile<string> * PosFix = operationPosFix(operation);
-        Pile<string> * aux = new Pile<string>();
-        while(!PosFix->isEmpty()){
+    } else {
+        Pile<string> *PosFix = operationPosFix(operation);
+        Pile<string> *aux = new Pile<string>();
+        while (!PosFix->isEmpty()) {
             aux->Stack(PosFix->getTop());
             PosFix->depile();
         }
-        for(string s : aux->getPile()){
+        for (string s: aux->getPile()) {
             PosFix->Stack(s);
-            if(!isNumber(PosFix->getTop())){
+            if (!isNumber(PosFix->getTop())) {
                 string opertion = PosFix->depile();
+                std::cout << opertion << std::endl;
                 double a = stod(PosFix->depile());
+                std::cout << a << std::endl;
                 double b = stod(PosFix->depile());
-                if(opertion.compare("+")==0 || opertion.compare("-")==0){
-                    result = opertion.compare("+")==0?b+a:b-a;
+                std::cout << b << std::endl;
+                if (opertion.compare("+") == 0 || opertion.compare("-") == 0) {
+                    result = opertion.compare("+") == 0 ? b + a : b - a;
+                    std::cout << "1: " << result << std::endl;
                     PosFix->Stack(to_string(result));
-                }else if(opertion.compare("/")==0 || opertion.compare("*")==0){
-                    result = opertion.compare("/")==0?a/b:b*a;
+                } else if (opertion.compare("/") == 0 || opertion.compare("*") == 0) {
+                    result = opertion.compare("/") == 0 ? b / a : b * a;
+                    std::cout << "2: " << result << std::endl;
                     PosFix->Stack(to_string(result));
 
-                }else{
-                    result = pow(a, b);
+                } else {
+                    result = pow(b, a);
+                    std::cout << "3: " << result << std::endl;
                     PosFix->Stack(to_string(result));
                 }
             }
